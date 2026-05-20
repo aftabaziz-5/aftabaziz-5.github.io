@@ -52,9 +52,14 @@ document.querySelector('.contact-form')?.addEventListener('submit', function(e) 
 
     // Create mailto link with form data
     const subject = encodeURIComponent('Contact from Website');
-    const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+     const body = encodeURIComponent(
+     `This message is from Portfolio Website
+
+     Name: ${name}
+
+      Message:
+      ${message}`
+     );
 
     const mailtoLink = `mailto:aftabaziz42966@gmail.com?subject=${subject}&body=${body}`;
 
