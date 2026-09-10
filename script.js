@@ -1,3 +1,52 @@
+// Type the hero lines progressively so normal text wrapping is preserved.
+(function initializeHeroTypewriter() {
+    const firstLine = document.querySelector('#hero-line-1');
+    const secondLine = document.querySelector('#hero-line-2');
+
+    if (!firstLine || !secondLine) {
+        return;
+    }
+
+    const firstText = 'Welcome To My Site';
+    const secondText = "Hello! I'm Aftab Aziz, a passionate Software Engineering student.";
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion) {
+        firstLine.textContent = firstText;
+        secondLine.textContent = secondText;
+        return;
+    }
+
+    const mobileSpeed = window.matchMedia('(max-width: 768px)').matches;
+    const characterDelay = mobileSpeed ? 42 : 72;
+
+    function typeLine(element, text, onComplete) {
+        let position = 0;
+        element.classList.add('typing-active');
+
+        function addCharacter() {
+            element.textContent = text.slice(0, position);
+
+            if (position < text.length) {
+                position += 1;
+                window.setTimeout(addCharacter, characterDelay);
+                return;
+            }
+
+            onComplete();
+        }
+
+        addCharacter();
+    }
+
+    typeLine(firstLine, firstText, function () {
+        firstLine.classList.remove('typing-active');
+        typeLine(secondLine, secondText, function () {
+            secondLine.classList.add('typing-active');
+        });
+    });
+})();
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -35,7 +84,7 @@ document.querySelectorAll('.project-card, .skill-item').forEach(element => {
 });
 
 // Get Started button functionality
-document.querySelector('.btn')?.addEventListener('click', function() {
+document.querySelector('.hero .btn')?.addEventListener('click', function() {
     document.querySelector('#projects').scrollIntoView({
         behavior: 'smooth'
     });

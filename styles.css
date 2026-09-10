@@ -725,40 +725,67 @@ section h2 {
 
 /* ===== ROTATING GLOW BORDER ===== */
 
+@property --glow-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 .glow-border {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    border-radius: 6px;
-    background: #1e293b;
+    border-radius: 12px;
 }
 
 .glow-border::before {
-    position: absolute;
-    inset: -50%;
-    z-index: -2;
     content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
     background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 270deg,
-        rgba(56, 189, 248, 0.15) 315deg,
-        #38bdf8 345deg,
-        #38bdf8 360deg
+        from var(--glow-angle),
+        transparent 0%,
+        transparent 60%,
+        #38bdf8 80%,
+        #7dd3fc 90%,
+        #38bdf8 100%
     );
+    padding: 2px;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
 }
 
-.glow-border::after {
-    position: absolute;
-    inset: 2px;
-    z-index: -1;
-    content: "";
-    border-radius: inherit;
-    background: #1e293b;
+.glow-border a,
+.glow-border button,
+a.glow-border,
+button.glow-border {
+    position: relative;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.glow-border > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes glowRotate {
+    to {
+        --glow-angle: 360deg;
+    }
+}
+
+.glow-border::before {
+    animation: glowRotate 4s linear infinite;
 }
 
 .download-btn.glow-border {
+    padding: 0.8rem 1.5rem;
     color: var(--primary-color);
 }
 
@@ -767,17 +794,37 @@ section h2 {
     color: var(--white);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .glow-border::before {
-        animation: rotateBorder 4s linear infinite;
-    }
-
-    @keyframes rotateBorder {
-        to {
-            transform: rotate(360deg);
-        }
-    }
+.education-card.glow-border,
+.document-card.glow-border {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: var(--light-bg);
 }
+
+.education-card.glow-border {
+    padding: 2rem;
+}
+
+.cv-download-card.glow-border {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), var(--light-bg));
+}
+
+.section-title {
+    display: inline-block;
+    padding: 10px 28px;
+    margin: 0 auto 3rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.section-title h2,
+.section-title h3 {
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
 /* ================= MOBILE RESPONSIVE FIX ================= */
 
 @media (max-width: 768px) {
@@ -998,4 +1045,46 @@ section h2 {
         max-width: 250px;
         margin: auto;
     }
+}
+
+/* ===== HERO TYPEWRITER ===== */
+
+#hero-line-1,
+#hero-line-2 {
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.typing-active::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 0.08em;
+    color: var(--primary-color);
+    animation: blink-cursor 0.8s step-end infinite;
+}
+
+@keyframes blink-cursor {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typing-active::after {
+        animation: none;
+    }
+}
+
+/* Keep button labels visible above the animated glow layer. */
+.download-btn,
+.view-btn,
+.btn {
+    color: #020617 !important;
+    font-weight: bold !important;
+    z-index: 3 !important;
+    position: relative !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
