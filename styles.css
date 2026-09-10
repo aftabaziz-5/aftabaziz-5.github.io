@@ -1088,3 +1088,31 @@ button.glow-border {
     align-items: center !important;
     justify-content: center !important;
 }
+
+/* Compact section headings on mobile */
+@media (max-width: 768px) {
+    .section-title,
+    .section-title-wrapper {
+        display: inline-block !important;
+        width: auto !important;
+        max-width: 90% !important;
+        margin: 0 auto 1.5rem !important;
+        padding: 8px 18px !important;
+    }
+
+    .section-title h2,
+    section h2 {
+        font-size: 1.5rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Keep heading wrappers centered when they are direct section children. */
+    section > .section-title-wrapper,
+    section > h2 {
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+}
