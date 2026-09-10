@@ -36,33 +36,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Aftab Aziz is a Software Engineering graduate focused on cybersecurity, ethical hacking, API security, and secure web development.">
+    <meta name="keywords" content="Aftab Aziz, cybersecurity, ethical hacking, software engineering, API security, penetration testing">
+    <meta property="og:title" content="Aftab Aziz | Cybersecurity Portfolio">
+    <meta property="og:description" content="Software Engineering graduate focused on cybersecurity, ethical hacking, API security, and secure web development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aftabaziz-5.github.io/">
+    <meta property="og:image" content="https://aftabaziz-5.github.io/profile.png.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aftab Aziz | Cybersecurity Portfolio">
+    <meta name="twitter:description" content="Aftab Aziz's cybersecurity and software engineering portfolio.">
+    <meta name="twitter:image" content="https://aftabaziz-5.github.io/profile.png.jpeg">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Google Verification -->
     <meta name="google-site-verification" content="M2kGrX2G9nO6yjumzhzhS9j4_whsCsVqV6kBHfXXmrE" />
     
-    <title>Aftab Aziz - Portfolio</title>
+    <title>Aftab Aziz | Software Engineering & Cybersecurity</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+    <div class="page-loader" aria-label="Loading portfolio" role="status">
+        <span class="loader-mark">AA</span>
+        <span class="loader-line"><i></i></span>
+    </div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="floating-actions" aria-label="Quick actions">
+        <a class="floating-resume" href="curriculum%20vitae.pdf.pdf" download><i class="fas fa-download" aria-hidden="true"></i><span>Download Resume</span></a>
+        <button class="back-to-top floating-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+    </div>
+    <a class="skip-link" href="#home">Skip to content</a>
+
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary navigation">
         <div class="container">
-            <div class="logo">About Me</div>
-            <button class="navbar-toggle" aria-label="Toggle navigation">
+            <a class="logo" href="#home" aria-label="Aftab Aziz home"><span>AA</span> AFTAB AZIZ</a>
+            <div class="nav-tools">
+                <label class="theme-control" for="theme-select"><span class="sr-only">Theme</span><i class="fas fa-circle-half-stroke" aria-hidden="true"></i><select id="theme-select"><option value="auto">Auto</option><option value="dark">Dark</option><option value="light">Light</option></select></label>
+                <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false"><i class="fas fa-volume-xmark" aria-hidden="true"></i><span class="sr-only">Sound effects off</span></button>
+            </div>
+            <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Educational Record</a></li>
-                <li><a href="#documents">Documents</a></li>
+                <li><a href="#documents">Certifications</a></li>
                 <li><a href="#fyp">FYP</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -71,7 +101,7 @@
     </nav>
 
     <!-- ===== HOME SECTION ===== -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-labelledby="hero-line-1">
         <div class="hero-bg" aria-hidden="true">
             <div class="hero-ring hero-ring-outer"></div>
             <div class="hero-ring hero-ring-inner"></div>
@@ -94,36 +124,66 @@
         <div class="container">
             <div class="hero-wrapper">
                 <div class="hero-content">
+                    <p class="eyebrow"><span class="status-dot"></span> Available for meaningful work</p>
                     <h1 id="hero-line-1"></h1>
                     <p id="hero-line-2"></p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#fyp">Explore my work <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+                        <a class="btn btn-ghost" href="#contact">Let's connect <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="hero-stats" aria-label="Portfolio highlights">
+                        <span><strong>01</strong> FYP platform</span>
+                        <span><strong>06</strong> core skills</span>
+                        <span><strong>2026</strong> graduate</span>
+                    </div>
+                    <a class="scroll-cue" href="#about" aria-label="Scroll to About Me"><span></span> Scroll to explore</a>
                 </div>
                 <div class="hero-photo">
-                    <img src="profile.png.jpeg" alt="Profile photo of Aftab Aziz" title="Aftab Aziz Profile Photo">
+                    <div class="photo-frame">
+                        <span class="photo-label">IDENTITY / 01</span>
+                        <img src="profile.png.jpeg" alt="Profile photo of Aftab Aziz" title="Aftab Aziz Profile Photo">
+                        <span class="photo-coordinates">34.01° N&nbsp;&nbsp;71.97° E</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== ABOUT SECTION ===== -->
-    <section id="about" class="about">
+    <section id="about" class="about reveal-section">
         <div class="container">
             <div style="text-align: center;">
                 <div class="glow-border section-title">
                     <h2>About Me</h2>
                 </div>
             </div>
-            <p>
+            <div class="about-grid">
+            <p class="glass-panel about-copy">
                 I am Aftab Aziz from District Bajaur. I completed my SSC from FC Public School in 2020 and FSC in Computer Science from Government Post Graduate College Khar. I recently graduated with a Bachelor's degree in Software Engineering from Abdul Wali Khan University Mardan.
                 <br><br>
                 I have a strong interest in Cybersecurity, Ethical Hacking, and Web Security. During my academic journey, I worked on projects related to API security, vulnerability assessment, and secure web development. My Final Year Project, "CyberGuard," focused on API Security and Threat Monitoring.
                 <br><br>
                 I am passionate about learning modern technologies and continuously improving my skills in cybersecurity, penetration testing, and software development.
             </p>
+            <div class="about-highlights glass-panel">
+                <p class="eyebrow">Profile highlights</p>
+                <div class="highlight-item"><span class="highlight-number">01</span><span>Software Engineering graduate with a security-first mindset.</span></div>
+                <div class="highlight-item"><span class="highlight-number">02</span><span>Focused on ethical hacking, API security, and threat monitoring.</span></div>
+                <div class="highlight-item"><span class="highlight-number">03</span><span>Always learning, building, and improving secure digital experiences.</span></div>
+                <div class="about-stats" aria-label="About statistics">
+                    <div><strong data-count="1">0</strong><span>Security platform</span></div>
+                    <div><strong data-count="6">0</strong><span>Core disciplines</span></div>
+                    <div><strong data-count="2026">0</strong><span>Graduate year</span></div>
+                    <div><strong data-count="5">0</strong><span>Technologies</span></div>
+                    <div><strong data-count="1">0</strong><span>Years learning</span></div>
+                </div>
+            </div>
+            </div>
         </div>
     </section>
 
     <!-- ===== EDUCATIONAL RECORD SECTION ===== -->
-    <section id="education" class="education">
+    <section id="education" class="education reveal-section">
         <div class="container">
             <div style="text-align: center;">
                 <div class="glow-border section-title">
@@ -138,6 +198,8 @@
                     <p class="education-description">Complete overview of my education, skills, and experience in one document.</p>
                     <div class="download-buttons">
                         <a href="curriculum%20vitae.pdf.pdf" target="_blank" rel="noopener" class="btn download-btn glow-border">View CV</a>
+                        <a href="curriculum%20vitae.pdf.pdf" download class="btn download-btn glow-border">Download CV</a>
+                        <button class="btn download-btn glow-border" id="print-cv" type="button">Print CV</button>
                     </div>
                 </article>
 
@@ -181,11 +243,11 @@
     </section>
 
     <!-- ===== ADDITIONAL DOCUMENTS SECTION ===== -->
-    <section id="documents" class="documents">
+    <section id="documents" class="documents reveal-section">
         <div class="container">
             <div style="text-align: center;">
                 <div class="glow-border section-title">
-                    <h2>Additional Documents</h2>
+                    <h2>Certifications &amp; Documents</h2>
                 </div>
             </div>
             <div class="documents-grid">
@@ -214,23 +276,41 @@
     </section>
 
     <!-- ===== FYP SECTION ===== -->
-    <section id="fyp" class="fyp">
+    <section id="featured" class="featured-section reveal-section">
+        <div class="container">
+            <div class="featured-banner glass-panel">
+                <div><p class="eyebrow">Featured project</p><h2>CyberGuard / API security and threat monitoring</h2><p>A focused look at the final year platform behind my security-first practice.</p></div>
+                <a class="btn btn-primary" href="#fyp">View project <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </section>
+    <section id="fyp" class="fyp reveal-section">
         <div class="container">
             <div style="text-align: center;">
                 <div class="glow-border section-title">
                     <h2>FYP Project</h2>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="filter-bar" role="group" aria-label="Filter projects">
+                <button class="filter-button is-active" type="button" data-filter="all">All</button><button class="filter-button" type="button" data-filter="web">Web Security</button><button class="filter-button" type="button" data-filter="api">API Security</button><button class="filter-button" type="button" data-filter="networking">Networking</button><button class="filter-button" type="button" data-filter="python">Python</button><button class="filter-button" type="button" data-filter="javascript">JavaScript</button><button class="filter-button" type="button" data-filter="university">University Projects</button>
+            </div>
+            <article class="project-card glass-panel" data-tags="api web university">
+                <div class="project-visual"><img src="cyberguard-preview.svg" alt="Abstract CyberGuard security monitoring dashboard preview" loading="lazy" decoding="async"><span>LIVE SECURITY MONITOR</span></div>
+                <div class="project-topline"><span class="project-index">01 / FINAL YEAR PROJECT</span><span class="project-badges"><b>Featured</b><b>University Project</b></span><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
                 <h3>CyberGuard</h3>
                 <p>CyberGuard is our Final Year Project, an advanced cybersecurity platform developed collaboratively by two team members. 
-                 My partner on this project is Shakirullah, and together we contributed to the design, implementation, and deployment of the solution. <a href="https://cyberguard-du6d.onrender.com" target="_blank" style="color: #0ea5e9; text-decoration: underline;">Click here</a> to visit the project.</p>
-            </div>
+                 My partner on this project is Shakirullah, and together we contributed to the design, implementation, and deployment of the solution. <a href="https://cyberguard-du6d.onrender.com" target="_blank" rel="noopener" class="inline-link">Click here</a> to visit the project.</p>
+                <div class="tech-list"><span>API Security</span><span>Threat Monitoring</span><span>Secure Web Development</span></div>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="https://cyberguard-du6d.onrender.com" target="_blank" rel="noopener">Live demo <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    <a class="btn btn-ghost" href="https://github.com/aftabaziz-5" target="_blank" rel="noopener">GitHub profile <i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+            </article>
         </div>
     </section>
 
     <!-- ===== SKILLS SECTION ===== -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills reveal-section">
         <div class="container">
             <div style="text-align: center;">
                 <div class="glow-border section-title">
@@ -238,18 +318,33 @@
                 </div>
             </div>
             <div class="skills-grid">
-                <div class="skill-item">Ethical Hacking</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Network Security</div>
-                <div class="skill-item">Penetration Testing</div>
-                <div class="skill-item">Digital Forensics</div>
-                <div class="skill-item">Cryptography</div>
+                <article class="skill-group glass-panel"><p class="eyebrow">01 / Programming</p><div class="skill-item"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span><b>01</b></div></article>
+                <article class="skill-group glass-panel"><p class="eyebrow">02 / Cybersecurity</p><div class="skill-item"><i class="fas fa-user-secret" aria-hidden="true"></i><span>Ethical Hacking</span><b>02</b></div><div class="skill-item"><i class="fas fa-crosshairs" aria-hidden="true"></i><span>Penetration Testing</span><b>03</b></div><div class="skill-item"><i class="fas fa-fingerprint" aria-hidden="true"></i><span>Digital Forensics</span><b>04</b></div><div class="skill-item"><i class="fas fa-key" aria-hidden="true"></i><span>Cryptography</span><b>05</b></div></article>
+                <article class="skill-group glass-panel"><p class="eyebrow">03 / Networking</p><div class="skill-item"><i class="fas fa-network-wired" aria-hidden="true"></i><span>Network Security</span><b>06</b></div></article>
+            </div>
+            <div class="skill-search"><label for="skill-search"><i class="fas fa-search" aria-hidden="true"></i><span class="sr-only">Search skills</span></label><input id="skill-search" type="search" placeholder="Search skills..." autocomplete="off"></div>
+        </div>
+    </section>
+
+    <section id="learning" class="learning-section reveal-section"><div class="container"><div class="section-title"><h2>Now Learning</h2></div><div class="learning-card glass-panel"><span class="pulse-dot"></span><div><p class="eyebrow">Current focus</p><h3>Deepening secure API design and threat monitoring</h3><p>Continuing to build practical depth across cybersecurity and modern software engineering.</p></div></div></div></section>
+
+    <section id="experience" class="experience-section reveal-section"><div class="container"><div class="section-title"><h2>Experience Timeline</h2></div><div class="experience-track"><article class="experience-item glass-panel"><span>2022 - 2026</span><div><h3>Software Engineering Degree</h3><p>Abdul Wali Khan University Mardan</p></div></article><article class="experience-item glass-panel"><span>Final year</span><div><h3>CyberGuard platform</h3><p>Collaborative API security and threat monitoring project.</p></div></article></div></div></section>
+
+    <!-- ===== SECURITY CONSOLE SECTION ===== -->
+    <section id="terminal" class="terminal-section reveal-section">
+        <div class="container">
+            <div class="section-title"><h2>Security Console</h2></div>
+            <div class="terminal-window glass-panel" aria-label="Interactive portfolio terminal">
+                <div class="terminal-bar"><span></span><span></span><span></span><b>aftab@portfolio:~</b></div>
+                <div class="terminal-output" id="terminal-output" aria-live="polite"></div>
+                <form class="terminal-form" id="terminal-form"><label for="terminal-input">&gt;</label><input id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="try whoami"><button type="submit" aria-label="Run command"><i class="fas fa-arrow-right" aria-hidden="true"></i></button></form>
             </div>
         </div>
     </section>
 
     <!-- ===== CONTACT SECTION ===== -->
-    <section id="contact" class="contact">
+    <section id="faq" class="faq-section reveal-section"><div class="container"><div class="section-title"><h2>Common Questions</h2></div><div class="faq-list"><details class="faq-item glass-panel"><summary>What areas of cybersecurity interest me?</summary><p>My focus is cybersecurity, ethical hacking, API security, threat monitoring, and secure web development.</p></details><details class="faq-item glass-panel"><summary>What kind of work am I looking for?</summary><p>I am interested in meaningful opportunities where software engineering and practical security thinking can work together.</p></details><details class="faq-item glass-panel"><summary>Where can I learn more?</summary><p>Explore the project, documents, CV, and contact links on this portfolio.</p></details></div></div></section>
+    <section id="contact" class="contact reveal-section">
         <div class="container">
             <div style="text-align: center;">
                 <div class="glow-border section-title">
@@ -257,28 +352,28 @@
                 </div>
             </div>
             <div class="social-icons">
-                <a href="mailto:aa.salarzai@gmail.com" class="social-link" title="Email">
+                <a href="mailto:aa.salarzai@gmail.com" class="social-link" title="Email" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://wa.me/923000238242" target="_blank" class="social-link" title="WhatsApp">
+                <a href="https://wa.me/923000238242" target="_blank" rel="noopener" class="social-link" title="WhatsApp" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/aftabaziz_5/" target="_blank" class="social-link" title="Instagram">
+                <a href="https://www.instagram.com/aftabaziz_5/" target="_blank" rel="noopener" class="social-link" title="Instagram" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/aftab-aziz-2ab8ba278" target="_blank" class="social-link" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/aftab-aziz-2ab8ba278" target="_blank" rel="noopener" class="social-link" title="LinkedIn" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://x.com/aftabaziz_5" target="_blank" class="social-link" title="X">
+                <a href="https://x.com/aftabaziz_5" target="_blank" rel="noopener" class="social-link" title="X" aria-label="X">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="https://github.com/aftabaziz-5" target="_blank" class="social-link" title="GitHub">
+                <a href="https://github.com/aftabaziz-5" target="_blank" rel="noopener" class="social-link" title="GitHub" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.facebook.com/share/1Bfccku7re/" target="_blank" class="social-link" title="Facebook">
+                <a href="https://www.facebook.com/share/1Bfccku7re/" target="_blank" rel="noopener" class="social-link" title="Facebook" aria-label="Facebook">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://www.tiktok.com/@aftabaziz_5" target="_blank" class="social-link" title="TikTok">
+                <a href="https://www.tiktok.com/@aftabaziz_5" target="_blank" rel="noopener" class="social-link" title="TikTok" aria-label="TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
             </div>
@@ -288,9 +383,19 @@
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Design by Aftab Aziz</p>
+            <div class="footer-line" aria-hidden="true"></div>
+            <div class="footer-content">
+                <p>&copy; 2026 Aftab Aziz</p>
+                <a class="back-to-top" href="#home">Back to top <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
         </div>
     </footer>
+
+    <dialog class="command-palette" id="command-palette" aria-label="Command palette">
+        <form method="dialog"><input id="command-search" type="search" placeholder="Jump to a section..." aria-label="Search sections"><button value="close" aria-label="Close command palette">&times;</button></form>
+        <div class="command-list"><button type="button" data-command-target="home">Home</button><button type="button" data-command-target="about">About</button><button type="button" data-command-target="education">Education</button><button type="button" data-command-target="fyp">Projects</button><button type="button" data-command-target="skills">Skills</button><button type="button" data-command-target="contact">Contact</button></div>
+    </dialog>
+    <dialog class="preview-modal" id="preview-modal"><button class="modal-close" type="button" aria-label="Close preview">&times;</button><iframe title="Document preview" id="preview-frame"></iframe></dialog>
 
     <script src="script.js" defer></script>
 </body>
