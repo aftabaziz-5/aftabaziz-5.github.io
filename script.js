@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
 });
 
 function closeNavigation() {
+    // One shared close path prevents stale open state after link, Escape, or resize events.
     navigation?.classList.remove('is-open');
     navigationToggle?.classList.remove('is-open');
     document.body.classList.remove('menu-open');
@@ -33,7 +34,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 680) {
+    if (window.innerWidth > 768) {
         closeNavigation();
     }
 });
