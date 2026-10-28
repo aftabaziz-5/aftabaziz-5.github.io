@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-A simple, clean, and responsive personal portfolio website built with HTML, CSS, and JavaScript. Perfect for showcasing your skills, projects, and connecting with others.
+A responsive personal portfolio website built with HTML, CSS, and JavaScript.
 
 ## Features
 
@@ -8,16 +8,17 @@ A simple, clean, and responsive personal portfolio website built with HTML, CSS,
 - 🎨 **Modern Styling** - Clean and professional appearance with smooth animations
 - 📱 **Mobile-Friendly** - Optimized navigation and layout for all screen sizes
 - 🚀 **Smooth Scrolling** - Smooth navigation between sections
-- 📧 **Contact Form** - Simple contact form for visitors to get in touch
-- 🎯 **Projects Showcase** - Display your projects with descriptions
-- 💡 **Skills Section** - Highlight your key skills and expertise
+- 🎓 **Education** - Present academic background
+- 🎯 **Project Showcase** - Present the CyberGuard final-year project
+- 📧 **Contact Links** - Provide ways to get in touch
 
 ## Project Structure
 
 ```
 website/
 ├── index.html      # Main HTML file
-├── styles.css      # Styling and responsive design
+├── styles.css      # Main visual styling
+├── styles-responsive.css # Responsive layout adjustments
 ├── script.js       # JavaScript functionality
 └── README.md       # This file
 ```
@@ -27,10 +28,9 @@ website/
 ### 1. Customize Your Information
 
 Open `index.html` and update:
-- Replace "My Portfolio" with your name in the navigation
-- Update the hero section with your headline
-- Change "[Your Name]" in the About section
-- Add your actual projects and skills
+- Update the hero and About sections with confirmed information
+- Add project descriptions and skills only after verifying them
+- Review any linked documents before making them public
 
 ### 2. View Locally
 
@@ -72,9 +72,9 @@ Edit the CSS variables in `styles.css`:
 ### Sections
 - **Hero**: Update title and subtitle
 - **About**: Write your bio
-- **Projects**: Add 3+ project cards with descriptions
-- **Skills**: List your technical and soft skills
-- **Contact**: The form is ready to use
+- **Education**: Keep academic details accurate
+- **Projects**: Describe only your confirmed role and contributions
+- **Contact**: Update the contact links
 
 ### Add Images
 Create an `assets` folder and update the project image paths:
