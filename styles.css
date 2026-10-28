@@ -36,5 +36,15 @@ body[data-theme="light"] { --ink:#eef7fb; --ink-soft:#dcecf2; --panel:rgba(255,2
 @media (max-width:900px) { .nav-tools { order:3; margin-left:0; }.nav-tools .theme-control select { width:48px; }.featured-banner { align-items:flex-start; flex-direction:column; }.featured-banner .btn { width:100%; }.experience-item { grid-template-columns:1fr; gap:4px; } }
 @media (max-width:768px) { .navbar .container { justify-content:flex-start; }.nav-tools { order:2; margin-left:auto; margin-right:0; }.navbar-toggle { order:3; margin-left:8px; }.theme-control { width:auto; padding:0 7px; }.theme-control select { display:block; width:42px; font-size:.58rem; }.sound-toggle { display:none; }.floating-actions { right:14px; bottom:calc(14px + env(safe-area-inset-bottom)); }.floating-resume span { display:none; }.floating-resume { width:46px; padding:0; }.featured-banner { padding:24px; }.project-badges { justify-content:flex-start; margin:8px 0 0; }.project-topline { align-items:flex-start; flex-wrap:wrap; gap:8px; }.skill-group { padding:18px; }.experience-item { padding-right:20px; padding-left:30px; }.command-palette { width:calc(100% - 20px); } }
 @media print { .navbar,.floating-actions,.scroll-progress,.page-loader,.cursor-dot,.hero-bg,.nav-tools,.command-palette { display:none!important; } body { color:#000; background:#fff; } section { padding:30px 0; } }
+
+.reveal-section > .container > *,
+.reveal-section .education-card,
+.reveal-section .document-card,
+.reveal-section .project-card,
+.reveal-section .skill-item,
+.reveal-section .social-link {
+    opacity: 1;
+    transform: none;
+}
 @media (forced-colors:active) { .btn,.filter-button,.social-link,.floating-resume,.floating-top,.theme-control,.sound-toggle { border:2px solid ButtonText; } .section-title h2,.section-title h3,.eyebrow,.project-index { color:LinkText; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }.hero-bg .particle { display:none!important; }.reveal-section>.container>*,.reveal-section .education-card,.reveal-section .document-card,.reveal-section .project-card,.reveal-section .skill-item,.reveal-section .social-link { opacity:1; transform:none; } }

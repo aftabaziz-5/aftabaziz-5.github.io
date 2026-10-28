@@ -62,18 +62,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 const sections = [...document.querySelectorAll('section[id]')];
 
-const activeSectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-            return;
-        }
-        navigationLinks.forEach((link) => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+if (typeof window.IntersectionObserver === 'function') {
+    const activeSectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+            navigationLinks.forEach((link) => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+            });
         });
-    });
-}, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
-sections.forEach((section) => activeSectionObserver.observe(section));
+    sections.forEach((section) => activeSectionObserver.observe(section));
+}
 
 // Keep pointer motion to one animation frame so it never competes with scrolling.
 const hero = document.querySelector('.hero');
@@ -130,8 +132,6 @@ window.addEventListener('scroll', () => {
         scrollFrame = 0;
     });
 }, { passive: true });
-
-backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
 
 const themeSelect = document.querySelector('#theme-select');
 const savedTheme = localStorage.getItem('portfolio-theme') || 'auto';
